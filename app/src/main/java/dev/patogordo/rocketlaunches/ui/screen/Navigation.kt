@@ -1,13 +1,15 @@
-package dev.patogordo.rocketlaunches.ui.navigation
+package dev.patogordo.rocketlaunches.ui.screen
 
+import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import dev.patogordo.rocketlaunches.view.DetailScreen
-import dev.patogordo.rocketlaunches.view.MainScreen
+import dev.patogordo.rocketlaunches.ui.screen.detail_screen.DetailScreen
+import dev.patogordo.rocketlaunches.ui.screen.home_screen.HomeScreen
 
 @Composable
 fun Navigation() {
@@ -20,7 +22,7 @@ fun Navigation() {
     composable(
       route = Screen.MainScreen.route,
     ) {
-      MainScreen(navController = navController)
+      HomeScreen(navController = navController)
     }
 
     composable(
@@ -33,8 +35,8 @@ fun Navigation() {
         }
       )
     ) {
-      entry ->
-        DetailScreen(name = entry.arguments?.getString("name"))
+        entry ->
+      DetailScreen(name = entry.arguments?.getString("name"))
     }
   }
 }

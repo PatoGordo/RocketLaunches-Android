@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
   <style name="Theme.RocketLaunches" parent="android:Theme.Material.Light.NoActionBar" />
+
+  <style name="Theme.RocketLaunchesDark" parent="android:Theme.Material.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="android:colorBackground">@color/base_300</item>
+  </style>
 </resources>

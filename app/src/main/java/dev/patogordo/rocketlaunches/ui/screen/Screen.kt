@@ -1,4 +1,4 @@
-package dev.patogordo.rocketlaunches.ui.navigation
+package dev.patogordo.rocketlaunches.ui.screen
 
 sealed class Screen(val route: String) {
   object MainScreen : Screen("index_screen")

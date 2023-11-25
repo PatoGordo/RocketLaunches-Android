@@ -1,4 +1,5 @@
-package dev.patogordo.rocketlaunches.view
+package dev.patogordo.rocketlaunches.ui.screen.detail_screen
+
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,7 +14,7 @@ fun DetailScreen(name: String? = null) {
 
   Box(
     modifier = Modifier
-    .fillMaxSize(),
+      .fillMaxSize(),
     contentAlignment = Alignment.Center
   ) {
     Text(text = "Hello $finalName")
