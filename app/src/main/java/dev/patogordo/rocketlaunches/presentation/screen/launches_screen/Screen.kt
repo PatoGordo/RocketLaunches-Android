@@ -19,7 +19,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import dev.patogordo.rocketlaunches.presentation.screen.Screen
-import dev.patogordo.rocketlaunches.presentation.screen.launches_screen.states.LaunchListItem
+import dev.patogordo.rocketlaunches.presentation.composables.LaunchListItem
+import dev.patogordo.rocketlaunches.presentation.composables.Loading
 import dev.patogordo.rocketlaunches.presentation.ui.theme.ErrorMain
 
 @Composable
@@ -63,9 +64,7 @@ fun LaunchesScreen(
     }
 
     if (state.isLoading) {
-      CircularProgressIndicator(
-        modifier = Modifier.align(Alignment.Center)
-      )
+      Loading("Loading launches..")
     }
   }
 }

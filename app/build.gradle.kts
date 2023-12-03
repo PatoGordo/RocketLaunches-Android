@@ -59,6 +59,8 @@ dependencies {
   implementation("androidx.navigation:navigation-compose:2.7.5")
   /* icons */
   implementation("androidx.compose.material:material-icons-extended")
+  /* animations */
+  implementation("com.airbnb.android:lottie-compose:6.2.0")
 
   // Api Request Libs
   implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
