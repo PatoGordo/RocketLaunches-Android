@@ -24,7 +24,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
   private val listIncomingUseCase: ListIncomingUseCase,
   private val listRecentUseCase: ListRecentUseCase,
- @ApplicationContext private val mContext: Context,
+  @ApplicationContext private val mContext: Context,
 ): ViewModel() {
   private val _launchState = mutableStateOf(LaunchListState())
   val launchState: State<LaunchListState> = _launchState

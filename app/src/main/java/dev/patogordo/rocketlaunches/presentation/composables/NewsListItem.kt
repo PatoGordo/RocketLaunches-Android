@@ -19,12 +19,14 @@ import androidx.compose.material.icons.filled.Newspaper
 import androidx.compose.material.icons.filled.RocketLaunch
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Newspaper
+import androidx.compose.material.icons.outlined.OpenInNew
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -52,7 +54,9 @@ fun NewsListItem(
   onItemClick: (NewsArticle) -> Unit
 ) {
   Surface(
-    modifier = Modifier.fillMaxWidth(),
+    modifier = Modifier
+      .fillMaxWidth()
+      .shadow(2.dp, RoundedCornerShape(16.dp)),
     shape = RoundedCornerShape(16.dp),
     color = Color.Transparent
   ) {
@@ -139,44 +143,14 @@ fun NewsListItem(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        Surface(
-          shape = RoundedCornerShape(8.dp),
-          color = InfoMain,
-          modifier = Modifier
-            .fillMaxWidth()
-            .clickable {
-              onItemClick(newsArticle)
-            },
-        ) {
-          Row(
-            modifier =
-            Modifier
-              .fillMaxWidth()
-              .padding(
-                horizontal = 12.dp,
-                vertical = 8.dp
-              ),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
-          ) {
-            Icon(
-              imageVector = Icons.Outlined.Info,
-              contentDescription = "Info icon",
-              tint = Color.White,
-              modifier = Modifier.size(24.dp)
-            )
-
-            Spacer(modifier = Modifier.width(4.dp))
-
-            Text(
-              text = "KNOW MORE",
-              color = Color.White,
-              fontSize = 16.sp,
-              fontWeight = FontWeight.Medium,
-              textAlign = TextAlign.Center
-            )
-          }
-        }
+        IconButton(
+          text = "Know more",
+          onClick = {
+            onItemClick(newsArticle)
+          },
+          endIcon = Icons.Outlined.OpenInNew,
+          endIconContentDescription = "Open in browser Icon"
+        )
       }
     }
   }

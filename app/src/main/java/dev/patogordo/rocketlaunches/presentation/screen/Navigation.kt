@@ -13,9 +13,11 @@ import dev.patogordo.rocketlaunches.common.Constants
 import dev.patogordo.rocketlaunches.presentation.composables.BottomNavigationBar
 import dev.patogordo.rocketlaunches.presentation.screen.launch_detail_screen.DetailScreen
 import dev.patogordo.rocketlaunches.presentation.screen.home_screen.HomeScreen
+import dev.patogordo.rocketlaunches.presentation.screen.home_screen.HomeViewModel
 import dev.patogordo.rocketlaunches.presentation.screen.launches_screen.LaunchesScreen
 import dev.patogordo.rocketlaunches.presentation.screen.launches_screen.LaunchesViewModel
 import dev.patogordo.rocketlaunches.presentation.screen.news_screen.NewsScreen
+import dev.patogordo.rocketlaunches.presentation.screen.news_screen.NewsViewModel
 
 @Composable
 fun Navigation() {
@@ -30,6 +32,8 @@ fun Navigation() {
     composable(
       route = Screen.HomeScreen.route,
     ) {
+      val viewModel = hiltViewModel<HomeViewModel>()
+
       HomeScreen(
         navController = navController,
       )
@@ -50,7 +54,14 @@ fun Navigation() {
     composable(
       route = Screen.NewsScreen.route
     ) {
-      NewsScreen()
+      val viewModel = hiltViewModel<NewsViewModel>()
+      val state = viewModel.state
+
+      NewsScreen(
+        navController = navController,
+        state = state,
+        openURLInBrowser = { viewModel.openURLInBrowser(it) }
+      )
     }
 
     composable(

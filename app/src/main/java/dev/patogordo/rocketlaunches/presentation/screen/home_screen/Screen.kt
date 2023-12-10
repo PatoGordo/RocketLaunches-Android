@@ -70,8 +70,13 @@ fun HomeScreen(
       Column (
         modifier = Modifier
           .fillMaxWidth()
-          .padding(24.dp)
+          .padding(
+            vertical = 0.dp,
+            horizontal = 24.dp,
+          )
       ) {
+        Spacer(modifier = Modifier.height(24.dp))
+
         Text(
           text = "   Next Launch   ",
           color = Color.White,

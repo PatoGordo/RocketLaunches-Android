@@ -20,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -48,7 +49,8 @@ fun BottomNavigationBar(
           .fillMaxWidth()
           .padding(32.dp)
           .background(Color.Transparent)
-          .zIndex(999f),
+          .zIndex(999f)
+          .shadow(2.dp, RoundedCornerShape(9999.dp)),
         color = Color.Transparent
       ) {
         Surface (

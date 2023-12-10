@@ -1,6 +1,7 @@
 package dev.patogordo.rocketlaunches.presentation.screen.launches_screen
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,6 +22,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,6 +32,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import dev.patogordo.rocketlaunches.R
 import dev.patogordo.rocketlaunches.presentation.screen.Screen
 import dev.patogordo.rocketlaunches.presentation.composables.LaunchListItem
 import dev.patogordo.rocketlaunches.presentation.composables.Loading
@@ -60,6 +63,18 @@ fun LaunchesScreen(
         .padding(horizontal = 24.dp)
     ) {
       item {
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Image(
+          painter = painterResource(
+            id = R.drawable.rocketlaunches_logo_landscape
+          ),
+          contentDescription = "Rocket Launches Logo",
+          modifier = Modifier
+            .fillMaxWidth()
+            .height(45.dp),
+        )
+
         Spacer(modifier = Modifier.height(24.dp))
 
         Text(

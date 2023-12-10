@@ -77,5 +77,5 @@ val bottomNavigationBarItems = listOf(
   Screen.HomeScreen,
   Screen.LaunchesScreen,
   Screen.NewsScreen,
-  Screen.ProfileScreen,
+//  Screen.ProfileScreen,
 )

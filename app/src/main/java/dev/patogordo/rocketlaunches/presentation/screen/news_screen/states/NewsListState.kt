@@ -4,6 +4,6 @@ import dev.patogordo.rocketlaunches.domain.model.NewsArticle
 
 data class NewsListState(
   val isLoading: Boolean = false,
-  val newsArticles: List<NewsArticle> = emptyList(),
+  val news: List<NewsArticle> = emptyList(),
   val error: String = ""
 )
