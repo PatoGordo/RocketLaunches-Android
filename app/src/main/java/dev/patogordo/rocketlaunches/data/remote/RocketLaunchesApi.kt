@@ -8,7 +8,7 @@ import retrofit2.http.GET
 interface RocketLaunchesApi {
   @GET("launches")
   suspend fun listIncomingLaunches() : ResultOf<List<LaunchDto>>
-  @GET("/news")
+  @GET("news")
   suspend fun listRecentNews() : ResultOf<List<NewsArticleDto>>
 
 //  @GET("/launches/{launchId}")

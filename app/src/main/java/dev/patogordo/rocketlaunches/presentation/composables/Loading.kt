@@ -37,7 +37,8 @@ fun Loading(
     modifier = Modifier
       .fillMaxSize()
       .background(Base300)
-      .offset(0.dp, 0.dp),
+      .offset(0.dp, 0.dp)
+      .zIndex(1000f),
     verticalArrangement = Arrangement.Center,
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
@@ -47,11 +48,9 @@ fun Loading(
 
     Column(
       modifier = Modifier
-        .offset(0.dp, 0.dp)
         .fillMaxSize()
         .background(Base300)
-        .padding(16.dp)
-        .zIndex(2f),
+        .padding(16.dp),
       verticalArrangement = Arrangement.Center,
       horizontalAlignment = Alignment.CenterHorizontally
     ) {

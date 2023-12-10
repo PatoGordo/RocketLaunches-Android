@@ -1,15 +1,20 @@
 package dev.patogordo.rocketlaunches.presentation.screen
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import dev.patogordo.rocketlaunches.common.Constants
+import dev.patogordo.rocketlaunches.presentation.composables.BottomNavigationBar
 import dev.patogordo.rocketlaunches.presentation.screen.launch_detail_screen.DetailScreen
 import dev.patogordo.rocketlaunches.presentation.screen.home_screen.HomeScreen
 import dev.patogordo.rocketlaunches.presentation.screen.launches_screen.LaunchesScreen
+import dev.patogordo.rocketlaunches.presentation.screen.launches_screen.LaunchesViewModel
 import dev.patogordo.rocketlaunches.presentation.screen.news_screen.NewsScreen
 
 @Composable
@@ -18,19 +23,27 @@ fun Navigation() {
 
   NavHost(
     navController = navController,
-    startDestination = Screen.HomeScreen.route
+    startDestination = Screen.HomeScreen.route,
+    modifier = Modifier
+      .fillMaxSize()
   ) {
     composable(
       route = Screen.HomeScreen.route,
     ) {
-      HomeScreen(navController = navController)
+      HomeScreen(
+        navController = navController,
+      )
     }
 
     composable(
       route = Screen.LaunchesScreen.route
     ) {
+      val viewModel = hiltViewModel<LaunchesViewModel>()
+      val state = viewModel.state
+
       LaunchesScreen(
-        navController = navController
+        navController = navController,
+        state = state
       )
     }
 
@@ -50,7 +63,9 @@ fun Navigation() {
       )
     ) {
         entry ->
-      DetailScreen(launchId = entry.arguments?.getString(Constants.PARAM_LAUNCH_ID))
+      DetailScreen(
+        launchId = entry.arguments?.getString(Constants.PARAM_LAUNCH_ID)
+      )
     }
   }
 }

@@ -1,4 +1,4 @@
-package dev.patogordo.rocketlaunches.presentation.screen.launches_screen._preview
+package dev.patogordo.rocketlaunches.presentation._preview
 
 import dev.patogordo.rocketlaunches.data.remote.dto.launch.Location
 import dev.patogordo.rocketlaunches.data.remote.dto.launch.Mission
